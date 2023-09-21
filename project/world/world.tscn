@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dc7b7ljkopad0"]
+[gd_scene load_steps=8 format=3 uid="uid://dc7b7ljkopad0"]
 
+[ext_resource type="Script" path="res://world/world.gd" id="1_2tnmf"]
 [ext_resource type="Texture2D" uid="uid://vdwpx42ravpm" path="res://world/grassMid.png" id="1_vk11b"]
 [ext_resource type="PackedScene" uid="uid://k2jvfl8ev78" path="res://alien/alien.tscn" id="2_fhoox"]
+[ext_resource type="PackedScene" uid="uid://c28y5f2f331ot" path="res://key/key.tscn" id="3_pa14e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hcaa0"]
 texture = ExtResource("1_vk11b")
@@ -16,7 +18,11 @@ tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hcaa0")
 
+[sub_resource type="LabelSettings" id="LabelSettings_gi8uq"]
+font_size = 48
+
 [node name="World" type="Node2D"]
+script = ExtResource("1_2tnmf")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_60pyl")
@@ -25,3 +31,12 @@ layer_0/tile_data = PackedInt32Array(262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 2
 
 [node name="Alien" parent="." instance=ExtResource("2_fhoox")]
 position = Vector2(329, 383)
+
+[node name="Key" parent="." instance=ExtResource("3_pa14e")]
+position = Vector2(681, 467)
+
+[node name="KeysLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Keys: N"
+label_settings = SubResource("LabelSettings_gi8uq")

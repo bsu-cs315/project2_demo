@@ -27,7 +27,8 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	_animated_sprite.play("walk" if velocity.x!=0 else "idle")
+	var animation_name := "walk" if velocity.x!=0 else "idle"
+	_animated_sprite.play(animation_name)
 	
 	if velocity.x > 0:
 		_animated_sprite.scale.x = 1

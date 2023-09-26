@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c28y5f2f331ot"]
 
-[ext_resource type="Texture2D" uid="uid://bckr51w82cm24" path="res://key/keyBlue.png" id="1_j4yef"]
 [ext_resource type="Script" path="res://key/key.gd" id="1_rnea1"]
+[ext_resource type="Texture2D" uid="uid://bckr51w82cm24" path="res://key/white_key.png" id="2_emsfg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_axela"]
 radius = 42.107
@@ -10,7 +10,7 @@ radius = 42.107
 script = ExtResource("1_rnea1")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_j4yef")
+texture = ExtResource("2_emsfg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_axela")

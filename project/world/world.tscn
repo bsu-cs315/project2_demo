@@ -37,16 +37,18 @@ offset_bottom = 23.0
 text = "Keys: N"
 label_settings = SubResource("LabelSettings_gi8uq")
 
-[node name="Objects" type="Node" parent="."]
+[node name="ObjectPositions" type="Node" parent="."]
 
-[node name="Marker2D" type="Marker2D" parent="Objects"]
+[node name="Marker2D" type="Marker2D" parent="ObjectPositions"]
 position = Vector2(525, 461)
 
-[node name="Marker2D2" type="Marker2D" parent="Objects"]
+[node name="Marker2D2" type="Marker2D" parent="ObjectPositions"]
 position = Vector2(633, 361)
 
-[node name="Marker2D3" type="Marker2D" parent="Objects"]
+[node name="Marker2D3" type="Marker2D" parent="ObjectPositions"]
 position = Vector2(776, 457)
 
-[node name="Marker2D4" type="Marker2D" parent="Objects"]
+[node name="Marker2D4" type="Marker2D" parent="ObjectPositions"]
 position = Vector2(948, 360)
+
+[node name="Objects" type="Node" parent="."]

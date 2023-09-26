@@ -5,11 +5,14 @@ const _OBJECT_TYPES := [
 	preload("res://gem/gem.tscn"),
 ]
 
+@onready var _object_positions := $ObjectPositions
+@onready var _objects := $Objects
+
 func _ready():
-	for child in $Objects.get_children():
+	for child in _object_positions.get_children():
 		var object : Node2D = _OBJECT_TYPES.pick_random().instantiate()
 		object.global_position = child.global_position
-		add_child(object)
+		_objects.add_child(object)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

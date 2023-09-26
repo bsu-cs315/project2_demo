@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5ypae0ayib2q"]
+
+[ext_resource type="Texture2D" uid="uid://b6rtvibcsh3mk" path="res://gem/gemYellow.png" id="1_vqqh1"]
+
+[node name="Gem" type="Node2D"]
+
+[node name="GemYellow" type="Sprite2D" parent="."]
+texture = ExtResource("1_vqqh1")

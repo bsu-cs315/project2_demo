@@ -6,11 +6,6 @@ func _ready():
 	$Sprite.modulate = Color(randf(), randf(), randf())
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
-
 func _on_body_entered(body):
 	if body.is_in_group("aliens"):
 		body.keys += 1

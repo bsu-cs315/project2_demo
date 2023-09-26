@@ -9,6 +9,8 @@ extends Node2D
 @onready var _objects := $Objects
 
 func _ready():
+	_spawn_player()
+	
 	if object_types.is_empty():
 		push_error("Uh oh, object types should not be empty.")
 	
@@ -24,3 +26,7 @@ func _process(_delta):
 	$KeysLabel.text = "Keys: %d" % $Alien.keys
 
 
+func _spawn_player():
+	var player_character := preload("res://alien/alien.tscn").instantiate()
+	player_character.global_position = $PlayerSpawnPoint.global_position
+	add_child(player_character)

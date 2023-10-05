@@ -2,11 +2,13 @@ extends Node2D
 
 @export var object_types : Array[String] = [
 	"res://key/key.tscn",
-	"res://gem/gem.tscn"
+#	"res://gem/gem.tscn"
 ]
 
 @onready var _object_positions := $ObjectPositions
 @onready var _objects := $Objects
+
+var _displayed_score := 0.0
 
 func _ready():
 	_spawn_player()
@@ -23,9 +25,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	$KeysLabel.text = "Keys: %d" % $Alien.keys
-
-
+	_displayed_score = lerpf(_displayed_score, float($Alien.score), 0.2)
+	$KeysLabel.text = "Score: %d" % ceil(_displayed_score)
+	$KeysLabel.scale.x = remap($Alien.score - _displayed_score, 0, 1000, 1.0, 5.0)
+		
 func _spawn_player():
 	var player_character := preload("res://alien/alien.tscn").instantiate()
 	player_character.global_position = $PlayerSpawnPoint.global_position

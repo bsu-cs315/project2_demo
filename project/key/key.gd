@@ -8,7 +8,7 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.is_in_group("aliens"):
-		body.keys += 1
+		body.score += 1000
 		
 		var audio_stream_player := AudioStreamPlayer.new()
 		audio_stream_player.stream = load("res://key/pickup_sound.wav")
